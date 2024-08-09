@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Security.Policy;
-using System.Text;
 using System.Threading.Tasks;
-
 using Json;
 partial class Program
 {
 	[CmdArg(Ordinal = 0, Required = true, Description = "The question to ask (use quotes)", ItemName = "question")]
 	static string Question;
 	[CmdArg(Name = "key", Description = "The API Key", ItemName = "key",Required =true)]
-	static string Key = "AIzaSyCse0M8u7n0Knf-VXMUagFplVP9k5a1mpQ";
+	static string Key = "";
 	const string _url_fmt = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={0}";
 	const string _json_prologue = "{\"contents\":[{\"parts\":[{\"text\":\""; const string _json_epilogue = "\"}]}]}";
 	static async Task MainAsync()
